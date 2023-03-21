@@ -1,0 +1,66 @@
+﻿@model AdminView.Models.ViewCreateTicketModel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+<h1 class="text-center" style="margin-top:24px;">Add New Ticket Information</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="@Model.Ticket.IdMovie" class="control-label"></label>
+                <select asp-for="@Model.Ticket.IdMovie" class="form-control">
+                    @foreach (var item in Model.Movies)
+                    {
+                        <option value=@item.Id>@item.Id - @item.Name</option>
+                    }
+                </select>
+                <span asp-validation-for="@Model.Ticket.IdMovie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Ticket.TicketType" class="control-label"></label>
+
+                <select asp-for="@Model.Ticket.TicketType" required>
+                    <option value="Basic">Select a TicketType: </option>
+                    <option value="Basic">Basic Ticket (Default)</option>
+                    <option value="Vip">Vip Ticket</option>
+                </select>
+                
+                <span asp-validation-for="@Model.Ticket.TicketType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Ticket.Price" class="control-label"></label>
+                <input min="0" type="number" asp-for="@Model.Ticket.Price" class="form-control" />
+                <span asp-validation-for="@Model.Ticket.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Ticket.Quantity" class="control-label"></label>
+                <input min="0" type="number" asp-for="@Model.Ticket.Quantity" class="form-control" />
+                <span asp-validation-for="@Model.Ticket.Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group text-center">
+                <input type="submit" value="Create" class="btn btn-success" />
+                <span> | </span>
+                <a asp-action="Index" class="btn btn-info">Back to List</a>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

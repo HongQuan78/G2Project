@@ -1,0 +1,83 @@
+﻿@model CinemaObject.Account
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--Login CSS-->
+<link rel="stylesheet" href="~/assets/css/login.css">
+<link rel="stylesheet" href="~/assets/css/reponsiveLogin.css">
+
+<style>
+    .error {
+        color: rgba(182,101,105,255);
+        background-color: rgba(242,222,222,255);
+        margin-top: 4px;
+        height: 44px;
+    }
+    
+    .errorText {
+        text-align: center;
+        line-height: 42px;
+        padding-left: 8px;
+    }
+</style>
+
+<div class="container-fluid customContainer">
+    <div class="row">
+        <div class="col-md-7 col-lg-6 formContainer">
+            <form asp-action="Login" asp-controller="Home" method="POST" id="loginForm">
+                <div class="headerContainer">
+                    <h1 class="formHeader">Login</h1>
+                </div>
+
+                <!--Username-->
+                <div class="form-group">
+                    <input asp-for="UserName" placeholder="Username" class="form-control" required />
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+
+                <!--Password-->
+                <div class="form-group" style="width: 342px;">
+                    <input asp-for="Password" type="password" placeholder="Password" class="form-control" required />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+
+                <!--Submit-->
+                <button type="submit" class="btn btn-primary loginBtn" id="submitForm">
+                    Login
+                </button>
+
+                <!--Have already Account-->
+                <p class="haveNotAccount">
+                    <i>I had not have account</i>
+                    /
+                    <a asp-action="Register" asp-controller="Home">Register now</a>
+                </p>
+                @{
+                    if (TempData.ContainsKey("Login"))
+                    {
+                        <p class="text-danger text-center">@TempData["Login"].ToString()</p>
+                    }
+
+                    if (TempData.ContainsKey("Register")) {
+                        <p class="text-success text-center">@TempData["Register"].ToString()</p>
+                    }
+                    
+                    if (TempData.ContainsKey("NeedLoginToBooking")) {
+                        <p class="text-warning text-center">@TempData["NeedLoginToBooking"].ToString()</p>
+                    }
+                }
+            </form>
+        </div>
+
+        <div class="col-md-5 col-lg-6 imgContainer">
+            <img src="~/assets/img/klipartz.com.png"
+                 class="img-fluid img-responsive"
+                 alt="Valentine form picture" />
+        </div>
+    </div>
+</div>
+
+<script src="~/assets/js/loginValidation.js"></script>

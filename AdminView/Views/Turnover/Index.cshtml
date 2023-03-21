@@ -1,0 +1,46 @@
+﻿@model AdminView.Models.TurnoverModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center" style="margin-top:24px;">Turnover Management</h1>
+
+<hr />
+
+<table class="table">
+    <thead>
+        <h2>Month @Model.month</h2>
+        <tr>
+            <th>Fast Food</th>
+            <th>Ticket</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>@Model.mfTotal</th>
+            <th>@Model.mtTotal</th>
+            <th>@(@Model.mfTotal + @Model.mtTotal)</th>
+        </tr>
+    </tbody>
+</table>
+
+<table class="table">
+    <thead>
+        <h2>Year @Model.year</h2>
+        <tr>
+            <th>Fast Food</th>
+            <th>Ticket</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>@Model.yfTotal</th>
+            <th>@Model.ytTotal</th>
+            <th>@(@Model.yfTotal + @Model.ytTotal)</th>
+        </tr>
+    </tbody>
+</table>

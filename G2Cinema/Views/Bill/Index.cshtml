@@ -1,0 +1,92 @@
+﻿@model IEnumerable<CinemaObject.Bill>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center" style="margin-top:24px;">Bill Management</h1>
+
+<hr />
+
+<table class="table table-hover table-responsive" id="billTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdMovie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TicketType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SeatNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FastFood)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuantityFastfood)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Drink)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuantityDrink)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TicketId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdMovie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TicketType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SeatNum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FastFood)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QuantityFastfood)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Drink)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QuantityDrink)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TicketId)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.Id }, new {@class= "btn btn-success"})
+                    <br />
+                    <br />
+
+                    @Html.ActionLink("Delete", "Delete", new { id=item.Id }, new {@class= "btn btn-danger"})
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

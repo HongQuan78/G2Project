@@ -1,0 +1,431 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>One Movies an Entertainment Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="One Movies Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //for-mobile-apps -->
+    <link href="~/assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/assets/css/contactstyle.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/assets/css/faqstyle.css" type="text/css" media="all" />
+    <link href="~/assets/css/single.css" rel='stylesheet' type='text/css' />
+    <link href="~/assets/css/medile.css" rel='stylesheet' type='text/css' />
+    <!-- banner-slider -->
+    <link href="~/assets/css/jquery.slidey.min.css" rel="stylesheet">
+    <!-- //banner-slider -->
+    <link rel="stylesheet" href="~/assets/list-css/list.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/assets/news-css/news.css" type="text/css" media="all" />
+
+    <!-- pop-up -->
+    <link href="~/assets/css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- //pop-up -->
+    <!-- font-awesome icons -->
+    <link rel="stylesheet" href="~/assets/css/font-awesome.min.css" />
+    <!-- //font-awesome icons -->
+    <!-- js -->
+    <script type="text/javascript" src="~/assets/js/jquery-2.1.4.min.js"></script>
+    <!-- //js -->
+    <!-- banner-bottom-plugin -->
+    <link href="~/assets/css/owl.carousel.css" rel="stylesheet" type="text/css" media="all">
+    <script src="~/assets/js/owl.carousel.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#owl-demo").owlCarousel({
+
+                autoPlay: 3000, //Set AutoPlay to 3 seconds
+
+                items: 5,
+                itemsDesktop: [640, 4],
+                itemsDesktopSmall: [414, 3]
+
+            });
+
+        });
+    </script>
+    <!-- //banner-bottom-plugin -->
+    <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="~/assets/js/move-top.js"></script>
+    <script type="text/javascript" src="~/assets/js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+    <!-- start-smoth-scrolling -->
+    <!-- tables -->
+    <link rel="stylesheet" type="text/css" href="~/assets/list-css/table-style.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/list-css/basictable.css" />
+    <script type="text/javascript" src="~/assets/list-js/jquery.basictable.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#table').basictable();
+
+            $('#table-breakpoint').basictable({
+                breakpoint: 768
+            });
+            $('#table-breakpoint1').basictable({
+                breakpoint: 768
+            });
+            $('#table-breakpoint2').basictable({
+                breakpoint: 768
+            });
+            $('#table-breakpoint3').basictable({
+                breakpoint: 768
+            });
+            $('#table-breakpoint4').basictable({
+                breakpoint: 768
+            });
+            $('#table-breakpoint5').basictable({
+                breakpoint: 768
+            });
+            $('#table-breakpoint6').basictable({
+                breakpoint: 768
+            });
+            $('#table-breakpoint7').basictable({
+                breakpoint: 768
+            });
+            $('#table-breakpoint8').basictable({
+                breakpoint: 768
+            });
+            $('#table-breakpoint9').basictable({
+                breakpoint: 768
+            });
+            $('#table-breakpoint10').basictable({
+                breakpoint: 768
+            });
+            $('#table-breakpoint11').basictable({
+                breakpoint: 768
+            });
+            $('#table-breakpoint12').basictable({
+                breakpoint: 768
+            });
+            $('#table-breakpoint13').basictable({
+                breakpoint: 768
+            });
+            $('#table-breakpoint14').basictable({
+                breakpoint: 768
+            });
+            $('#table-breakpoint15').basictable({
+                breakpoint: 768
+            });
+            $('#table-breakpoint16').basictable({
+                breakpoint: 768
+            });
+            $('#table-breakpoint17').basictable({
+                breakpoint: 768
+            });
+            $('#table-breakpoint18').basictable({
+                breakpoint: 768
+            });
+            $('#table-breakpoint19').basictable({
+                breakpoint: 768
+            });
+            $('#table-breakpoint20').basictable({
+                breakpoint: 768
+            });
+            $('#table-breakpoint21').basictable({
+                breakpoint: 768
+            });
+            $('#table-breakpoint22').basictable({
+                breakpoint: 768
+            });
+            $('#table-breakpoint23').basictable({
+                breakpoint: 768
+            });
+            $('#table-breakpoint24').basictable({
+                breakpoint: 768
+            });
+            $('#table-breakpoint25').basictable({
+                breakpoint: 768
+            });
+            $('#table-breakpoint26').basictable({
+                breakpoint: 768
+            });
+        });
+    </script>
+
+
+    <!--CSS for Data table-->
+    <style>
+        .dataTables_length,
+        .dataTables_filter {
+            padding: 10px 0px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .dataTables_filter label input {
+            margin-left: 12px;
+            border-radius: 30px;
+            text-indent: 8px;
+        }
+
+        .dataTables_info {
+            text-align: center;
+            padding: 10px 0;
+            font-size: 20px;
+        }
+
+        .dataTables_paginate {
+            text-align: center;
+            padding: 10px 0;
+            font-size: 20px;
+        }
+
+        .paginate_button {
+            margin: 0px 4px;
+        }
+        
+        .paginate_button:hover {
+            cursor: pointer;
+        }
+    </style>
+
+
+</head>
+<body>
+ 
+    <!-- header -->
+    <div class="header">
+        <div class="container">
+            <div class="w3layouts_logo">
+                <a asp-action="Index" asp-controller="Home">
+                    <h3 style="font-size: 34px;" class="text-center">G2<span>Movies</span></h3>
+                </a>
+            </div>
+            <div class="w3_search">
+
+                @using (Html.BeginForm("Search", "Home", FormMethod.Post))
+                {
+                    
+                    <input type="text" id="Search" name="Search" placeholder="Search Movie By Name" required>
+                    <input type="submit" value="Go">
+                }
+
+
+            </div>
+            <div class="w3l_sign_in_register">
+                <ul>
+                    <li><i class="fa fa-phone" aria-hidden="true"></i> 0708992832</li>
+                    
+                    @{
+                        if (@HttpContextAccessor.HttpContext.Session.GetString("Username") != null)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Logout">Logout</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Login">Login</a>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <!-- nav -->
+    <div class="movies_nav">
+        <div class="container">
+            
+            <nav class="navbar navbar-default">
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                    <nav>
+                        <ul class="nav navbar-nav" style="display: flex; justify-content: center; align-items: center;">
+                            <li class="nav-item active"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    Genres <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu multi-column columns-3">
+                                    <li>
+                                        <!--Genres (action, romance, family, animation, comedy, TV-series (phim bộ), horror)-->
+                                        <div class="col-sm-6">
+                                            <ul class="multi-column-dropdown">
+                                                <li><a asp-controller="Movie" asp-action="GetMovieByGenres" asp-route-genres="Action">Action</a></li>
+                                                <li><a asp-controller="Movie" asp-action="GetMovieByGenres" asp-route-genres="Romance">Romance</a></li>
+                                                <li><a asp-controller="Movie" asp-action="GetMovieByGenres" asp-route-genres="Family">Family</a></li>
+                                                <li><a asp-controller="Movie" asp-action="GetMovieByGenres" asp-route-genres="Horror">Horror</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <ul class="multi-column-dropdown">
+                                                <li><a asp-controller="Movie" asp-action="GetMovieByGenres" asp-route-genres="Animation">Animation</a></li>
+                                                <li><a asp-controller="Movie" asp-action="GetMovieByGenres" asp-route-genres="Comedy">Comedy</a></li>
+                                                <li><a asp-controller="Movie" asp-action="GetMovieByGenres" asp-route-genres="TV-Series">TV-Series</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!--For Contact function -->
+
+                            <li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!--  nav -->
+    <!--End: Header-->
+   
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <!--
+        <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - HighNemaWebApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    -->
+    <!--Start: Footer-->
+    <!-- footer -->
+    <footer>
+        <div class="footer">
+            <div class="container">
+                <div class="w3ls_footer_grid">
+                    <div class="col-md-6 w3ls_footer_grid_left">
+                        <div class="w3ls_footer_grid_left1">
+                            <h2>Subscribe to us</h2>
+                            <div class="w3ls_footer_grid_left1_pos">
+                                <form action="#" method="post">
+                                    <input type="email" name="email" placeholder="Your email..." required="">
+                                    <input type="submit" value="Send">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 w3ls_footer_grid_right">
+                        <a href="index.html">
+                            <h2 style="padding-right: 77px;font-size: 40px;width: 160px;">
+                                G2
+                                <span>Movies</span>
+                            </h2>
+                        </a>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="col-md-5 w3ls_footer_grid1_left">
+                    <p>
+                        &copy; 2022 G2 Movies. All rights reserved | Design by <a href="#">Group2</a>
+                    </p>
+                </div>
+                <div class="col-md-7 w3ls_footer_grid1_right">
+                    <ul>
+                        <li>
+                            <a href="/Home/Index">Movies</a>
+                        </li>
+                        <li>
+                            <a href="/Movie/GetMovieByGenres?genres=Action">Genres</a>
+                        </li>
+                        <li>
+                            <a href="/Home/Contact">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <!--End: Footer-->
+    </footer>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".dropdown").hover(
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+                    $(this).toggleClass('open');
+                },
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+                    $(this).toggleClass('open');
+                }
+            );
+        });
+    </script>
+    <!-- //Bootstrap Core JavaScript -->
+    <!-- here stars scrolling icon -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*
+                var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+                };
+            */
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+
+
+    <!--For Datatable-->
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#accountTable').DataTable();
+        });
+
+        $(document).ready(function () {
+            $('#movieTable').DataTable();
+        });
+
+        $(document).ready(function () {
+            $('#fastFoodTable').DataTable();
+        });
+
+        $(document).ready(function () {
+            $('#staffTable').DataTable();
+        });
+        
+        $(document).ready(function () {
+            $('#ticketTable').DataTable();
+        });
+        
+        $(document).ready(function () {
+            $('#billTable').DataTable();
+        });
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

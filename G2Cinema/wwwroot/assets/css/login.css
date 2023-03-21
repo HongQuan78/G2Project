@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.customContainer {
+    height: 100vh;
+}
+
+.formContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.customIcon {
+    display: block;
+    font-size: 24px;
+    margin-left: 236px;
+    color: rgba(255, 101, 132, 1);
+}
+
+.formHeader {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 90vh;
+}
+
+.loginBtn {
+    display: block;
+    width: 100%;
+    background-color: rgba(125, 99, 255, 1);
+}
+
+.haveNotAccount {
+    margin-top: 12px;
+    text-align: center;
+}

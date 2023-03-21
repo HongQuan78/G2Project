@@ -1,0 +1,64 @@
+﻿@model CinemaObject.staff
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center" style="margin-top:24px;">Edit Staff Information</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <form asp-action="Edit" asp-controller="Staff" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" readonly/>
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNum" class="control-label"></label>
+                <input asp-for="PhoneNum" class="form-control" />
+                <span asp-validation-for="PhoneNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Image" class="control-label"></label>
+                <input asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <select asp-for="Status">
+                    <option value="0">Select a Role: </option>
+                    <option value="0">0 - Customer</option>
+                    <option value="1">1 - Staff</option>
+                </select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group text-center">
+                <input type="submit" value="Save" class="btn btn-warning" />
+                <span> | </span>
+                <a asp-action="Index" class="btn btn-info">Back to List</a>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,67 @@
+﻿@model IEnumerable<CinemaObject.Ticket>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center" style="margin-top:24px;">Ticket Management</h1>
+
+<p style="margin: 24px 0;text-align: center;">
+    <a asp-action="Create" class="btn btn-success" style="width: 168px; border-radius:30px; padding: 14px 0px;">Add New Ticket</a>
+</p>
+
+<table class="table table-hover" id="myTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdMovie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TicketType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdMovie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TicketType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id }, new {@class= "btn btn-success"})
+                <br />
+                <br />
+
+                @Html.ActionLink("Details", "Details", new { id=item.Id }, new {@class= "btn btn-primary"})
+
+                <br />
+                <br />
+                @Html.ActionLink("Delete", "Delete", new { id=item.Id }, new {@class= "btn btn-danger"})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

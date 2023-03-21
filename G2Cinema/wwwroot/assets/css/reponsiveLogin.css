@@ -1,0 +1,25 @@
+@media (max-width: 766px) {
+    .imgContainer {
+        display: none;
+    }
+}
+
+@media (min-width: 740px) and (max-width: 1023px) {
+    .formContainer {
+        height: 80vh;
+    }
+
+    .imgContainer {
+        height: 60vh;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1336px) {
+    .formContainer {
+        height: 80vh;
+    }
+
+    .imgContainer {
+        height: 65vh;
+    }
+}

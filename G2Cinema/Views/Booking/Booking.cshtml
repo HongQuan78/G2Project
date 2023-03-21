@@ -1,0 +1,163 @@
+﻿@model G2Cinema.Models.BookingModel
+
+@{
+    ViewData["Title"] = "Booking";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center" style="margin-top:24px;">Booking Ticket Information - HighCinema</h2>
+
+<hr />
+
+
+<div class="row" style="margin: 20px 0px;">
+    <div class="col-md-4">
+        <img src="@Url.Content(Model.Movie.Image)" class="img-responsive"/>
+
+    </div>
+    
+    <div class="col-md-8">
+        <h3 class="text-center" >@Model.Movie.Name</h3>
+        <h4 class="text-left" style="margin: 20px 0px; font-weight: bold;">Description: </h4>
+        <p style="text-align: justify;">@Model.Movie.Description</p>
+        <p style="text-align: justify; margin: 20px 0px;"><span style="font-weight: bold;">Main Actors: </span>  @Model.Movie.MainCharacters</p>
+        <p> <span style="font-weight: bold;">Duration: </span> @Model.Movie.Duration minutes</p>
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+	<div class="col-md-12">
+		<h4 class="text-center">BOOKING TICKET</h4>
+		<hr>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<form asp-action="Create" asp-controller="Bill" method="post">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group" hidden>
+                <label asp-for="@Model.Bill.IdMovie" class="control-label"></label>
+                <input asp-for="@Model.Bill.IdMovie" class="form-control" value="@Model.Movie.Id" />
+                
+                <span asp-validation-for="@Model.Bill.IdMovie" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+				<label asp-for="@Model.Bill.SeatNum" class="control-label"></label>
+
+                <select asp-for="@Model.Bill.SeatNum" class="form-control" required>
+                    <option value="">Choosing your seat number</option>
+                    <option value="A1">A1</option>
+                    <option value="A2">A2</option>
+                    <option value="A3">A3</option>
+                    <option value="A4">A4</option>
+                    <option value="A5">A5</option>
+                    <option value="A6">A6</option>
+                    <option value="A7">A7</option>
+                    <option value="A8">A8</option>
+                    <option value="A9">A9</option>
+                    <option value="A10">A10</option>
+                </select>
+                
+				<span asp-validation-for="@Model.Bill.SeatNum" class="text-danger"></span>
+			</div>
+
+
+            <div class="form-group">
+                <label asp-for="@Model.Bill.TicketId" class="control-label"></label>
+                <select asp-for="@Model.Bill.TicketId" class="form-control">
+                    @foreach (var type in Model.Tickets)
+                    {
+                        if (type.IdMovie == Model.Movie.Id)
+                        {
+                            <option value=@type.Id>@type.TicketType</option>
+                        }
+                    }
+                </select>
+                <span asp-validation-for="@Model.Bill.TicketId" class="text-danger"></span>
+            </div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+                        <label asp-for="@Model.Bill.Drink" class="control-label"></label>
+                        <select asp-for="@Model.Bill.Drink" class="form-control">
+                            @foreach (var drink in Model.Drink)
+                            {
+                                <option value=@drink.Id>@drink.Name - @drink.Size</option>
+                            }
+                        </select>
+                        <span asp-validation-for="@Model.Bill.Drink" class="text-danger"></span>
+                    </div>
+				</div>
+
+				<div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="@Model.Bill.FastFood" class="control-label"></label>
+                        <select asp-for="@Model.Bill.FastFood" class="form-control" required>
+                            @foreach (var food in Model.Food)
+                            {
+                                <option value=@food.Id>@food.Name - @food.Size</option>
+                            }
+                        </select>
+                        <span asp-validation-for="@Model.Bill.FastFood" class="text-danger"></span>
+                    </div>
+				</div>										
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label asp-for="@Model.Bill.QuantityDrink" class="control-label"></label>
+						<input type="number" asp-for="@Model.Bill.QuantityDrink" class="form-control" min="0" required/>
+						<span asp-validation-for="@Model.Bill.QuantityDrink" class="text-danger"></span>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="form-group">
+                        <label asp-for="@Model.Bill.QuantityFastfood" class="control-label"></label>
+                        <input type="number" asp-for="@Model.Bill.QuantityFastfood" class="form-control" min="0" required/>
+                        <span asp-validation-for="@Model.Bill.QuantityFastfood" class="text-danger"></span>
+                    </div>
+				</div>
+			</div>
+
+            <div class="row">
+			    <div class="form-group col-md-12">
+                    <input type="submit" value="Create" class="btn btn-success" />
+                </div>
+            </div>
+		</form>
+	</div>
+</div>
+
+
+<div class="row">
+    <hr />
+    <h3 class="text-center" style="margin: 20px 0px;">Guiding for booking ticket - HighCinema</h3>
+    <hr />
+
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <img src="@Url.Content("~/img/imgBookingTicket/cinemaSeating.png")" class="img-responsive"/>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+
+<hr style="margin:20px 0px;" />
+
+
+
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

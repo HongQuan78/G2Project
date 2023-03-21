@@ -1,0 +1,88 @@
+﻿@model CinemaObject.Bill
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center" style="margin-top:24px;">Delete Bill </h1>
+<h3 class="text-center">Are you sure you want to delete this?</h3>
+
+<hr />
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdMovie)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdMovie)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TicketType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TicketType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SeatNum)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SeatNum)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FastFood)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FastFood)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantityFastfood)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.QuantityFastfood)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Drink)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Drink)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantityDrink)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.QuantityDrink)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Total)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TicketId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TicketId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BookingDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BookingDate)
+        </dd>
+    </dl>
+</div>
+<div class="text-center" style="margin: 16px 0px">
+    <form asp-action="Delete">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-info">Back to List</a>
+    </form>
+</div>
